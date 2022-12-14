@@ -4,13 +4,15 @@ using Android.Content;
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
+using AndroidX.Startup;
+using Firebase;
 using Firebase.Iid;
 using PushDemo.Droid.Services;
 using PushDemo.Services;
 
 namespace PushDemo.Droid
 {
-    [Activity(Label = "PushDemo", LaunchMode = LaunchMode.SingleTop, Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Theme = "@style/Maui.SplashTheme", MainLauncher = true, LaunchMode = LaunchMode.SingleTop, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize | ConfigChanges.Density)]
     public class MainActivity : MauiAppCompatActivity, Android.Gms.Tasks.IOnSuccessListener
     {
         IPushDemoNotificationActionService _notificationActionService;
@@ -37,6 +39,7 @@ namespace PushDemo.Droid
 
             if (DeviceInstallationService.NotificationsSupported)
             {
+
                 FirebaseInstanceId.GetInstance(Firebase.FirebaseApp.Instance)
                     .GetInstanceId()
                     .AddOnSuccessListener(this);

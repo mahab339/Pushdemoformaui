@@ -9,9 +9,10 @@ namespace PushDemo
         public App()
         {
             InitializeComponent();
-
-            //ServiceContainer.Resolve<IPushDemoNotificationActionService>()
-                //.ActionTriggered += NotificationActionTriggered;
+            ServiceContainer.Register<IPushDemoNotificationActionService>(() => new PushDemoNotificationActionService());
+            ServiceContainer.Register<INotificationRegistrationService>(() => new NotificationRegistrationService(Config.BackendServiceEndpoint, Config.ApiKey));
+            ServiceContainer.Resolve<IPushDemoNotificationActionService>()
+                .ActionTriggered += NotificationActionTriggered;
 
             MainPage = new MainPage();
         }
@@ -28,6 +29,7 @@ namespace PushDemo
         void ShowActionAlert(PushDemoAction action)
             => MainThread.BeginInvokeOnMainThread(()
                 => MainPage?.DisplayAlert("PushDemo", $"{action} action received", "OK").ContinueWith((task)
-                    => { if (task.IsFaulted) throw task.Exception; }));
+                    =>
+                { if (task.IsFaulted) throw task.Exception; }));
     }
 }
