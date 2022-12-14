@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PushDemo.MainPage">
+    <StackLayout VerticalOptions="EndAndExpand"
+                 HorizontalOptions="FillAndExpand"
+                 Padding="20,40">
+        <!--<Button x:Name="RegisterButton" Text="Register" Clicked="RegisterButtonClicked" />
+        <Button x:Name="DeregisterButton" Text="Deregister" Clicked="DeregisterButtonClicked" />-->
+        <Button x:Name="RegisterButton"
+                Text="Register" />
+        <Button x:Name="DeregisterButton"
+                Text="Deregister" />
+    </StackLayout>
+</ContentPage>
