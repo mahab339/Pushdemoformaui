@@ -12,8 +12,8 @@ namespace PushDemo
         {
             InitializeComponent();
 
-            //_notificationRegistrationService =
-            //    ServiceContainer.Resolve<INotificationRegistrationService>();
+            _notificationRegistrationService =
+                ServiceContainer.Resolve<INotificationRegistrationService>();
         }
 
         void RegisterButtonClicked(object sender, EventArgs e)

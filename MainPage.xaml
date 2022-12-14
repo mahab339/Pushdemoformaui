@@ -5,11 +5,11 @@
     <StackLayout VerticalOptions="EndAndExpand"
                  HorizontalOptions="FillAndExpand"
                  Padding="20,40">
-        <!--<Button x:Name="RegisterButton" Text="Register" Clicked="RegisterButtonClicked" />
-        <Button x:Name="DeregisterButton" Text="Deregister" Clicked="DeregisterButtonClicked" />-->
         <Button x:Name="RegisterButton"
-                Text="Register" />
+                Text="Register"
+                Clicked="RegisterButtonClicked" />
         <Button x:Name="DeregisterButton"
-                Text="Deregister" />
+                Text="Deregister"
+                Clicked="DeregisterButtonClicked" />
     </StackLayout>
 </ContentPage>
