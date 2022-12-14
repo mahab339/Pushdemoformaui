@@ -1,6 +1,6 @@
 ﻿# Pushdemoformaui
 Export xamarin with hubs sample to maui (https://github.com/xamcat/mobcat-samples/tree/master/notification_hub_backend_service/src/xamarin)
-*
+
 Details for project with backend: https://learn.microsoft.com/en-us/azure/developer/mobile-apps/notification-hubs-backend-service-xamarin-forms
 
 Only android done, iOS to follow...
