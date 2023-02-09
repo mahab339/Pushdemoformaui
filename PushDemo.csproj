@@ -14,7 +14,7 @@
 		<ApplicationTitle>PushDemo</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.mobcat.pushdemo</ApplicationId>
+		<ApplicationId>com.mobcat.pushdemo3</ApplicationId>
 		<ApplicationIdGuid>d3892a52-1162-463e-a8c9-148b212978b8</ApplicationIdGuid>
 
 		<!-- Versions -->
@@ -27,6 +27,11 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)'=='net7.0-ios'">
+	  <CodesignKey>Apple Development: Created via API (RKFFY3SRGN)</CodesignKey>
+	  <CodesignProvision>VS: WildCard Development</CodesignProvision>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -70,5 +75,5 @@
 			<Version>118.1.0.1</Version>
 		</PackageReference>
 	</ItemGroup>
-			<Import Project="C:\Users\Administrator\.nuget\packages\xamarin.googleplayservices.basement\118.1.0\build\MonoAndroid12.0\Xamarin.GooglePlayServices.Basement.targets" Condition="Exists('C:\Users\Administrator\.nuget\packages\xamarin.googleplayservices.basement\118.1.0\build\MonoAndroid12.0\Xamarin.GooglePlayServices.Basement.targets')" />
+			<Import Project="C:\Users\mabdu\.nuget\packages\xamarin.googleplayservices.basement\118.1.0\build\MonoAndroid12.0\Xamarin.GooglePlayServices.Basement.targets" Condition="Exists('C:\Users\Administrator\.nuget\packages\xamarin.googleplayservices.basement\118.1.0\build\MonoAndroid12.0\Xamarin.GooglePlayServices.Basement.targets')" />
 </Project>

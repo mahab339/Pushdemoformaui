@@ -1,9 +1,8 @@
 ﻿# Pushdemoformaui
 Export xamarin with hubs sample to maui (https://github.com/xamcat/mobcat-samples/tree/master/notification_hub_backend_service/src/xamarin)
-*
-Details for project with backend: https://learn.microsoft.com/en-us/azure/developer/mobile-apps/notification-hubs-backend-service-xamarin-forms
 
-Only android done, iOS to follow...
+* Details for project with backend: https://learn.microsoft.com/en-us/azure/developer/mobile-apps/notification-hubs-backend-service-xamarin-forms
+
 Main changes:
 
 * Use net 7 for nuget packages compatibility.
@@ -18,5 +17,5 @@ Main changes:
 
 * Move service regesteration from bootstrap to app.xaml.cs constructor if possible.
 
-* After each build, an error about auto generated AndroidManifest.xml. In (obj\Debug\net7.0-android\AndroidManifest.xml), add attribut (android:exported="true") to element service with (android:name) attribute value ending with PushNotificationFirebaseMessagingService.
+* After each build, an error about auto generated AndroidManifest.xml. In (obj\Debug\net7.0-android\AndroidManifest.xml), add attribut (android:exported="true") to element service with (android:name) attribute value ending with PushNotificationFirebaseMessagingService and rebuild.
 
