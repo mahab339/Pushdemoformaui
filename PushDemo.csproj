@@ -14,7 +14,7 @@
 		<ApplicationTitle>PushDemo</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.mobcat.pushdemo3</ApplicationId>
+		<ApplicationId>com.mobcat.pushdemo</ApplicationId>
 		<ApplicationIdGuid>d3892a52-1162-463e-a8c9-148b212978b8</ApplicationIdGuid>
 
 		<!-- Versions -->

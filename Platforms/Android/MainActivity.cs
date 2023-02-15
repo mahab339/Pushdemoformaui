@@ -35,7 +35,6 @@ namespace PushDemo.Droid
 
             base.OnCreate(savedInstanceState);
 
-            Bootstrap.Begin(() => new DeviceInstallationService());
 
             if (DeviceInstallationService.NotificationsSupported)
             {
