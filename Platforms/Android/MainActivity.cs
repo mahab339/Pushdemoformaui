@@ -66,9 +66,11 @@ namespace PushDemo.Droid
         }
 
         public void OnSuccess(Java.Lang.Object result)
-            => DeviceInstallationService.Token =
+        {
+            DeviceInstallationService.Token =
                 result.Class.GetMethod("getToken").Invoke(result).ToString();
-
+            App.Hubsdroidtoken = result.Class.GetMethod("getToken").Invoke(result).ToString();
+        }
         void ProcessNotificationActions(Intent intent)
         {
             try

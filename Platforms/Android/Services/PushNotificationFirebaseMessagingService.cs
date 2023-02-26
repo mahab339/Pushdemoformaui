@@ -31,6 +31,7 @@ namespace PushDemo.Droid.Services
         public override void OnNewToken(string token)
         {
             DeviceInstallationService.Token = token;
+            App.Hubsdroidtoken = token;
 
             NotificationRegistrationService.RefreshRegistrationAsync()
                 .ContinueWith((task) => { if (task.IsFaulted) throw task.Exception; });

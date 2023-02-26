@@ -6,6 +6,8 @@ namespace PushDemo
 {
     public partial class App : Application
     {
+        public static string Hubsdroidtoken { get; internal set; }
+
         public App()
         {
             InitializeComponent();
