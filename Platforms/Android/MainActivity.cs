@@ -1,9 +1,11 @@
 ﻿using System;
+using Android;
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
+using AndroidX.Core.App;
 using AndroidX.Startup;
 using Firebase;
 using Firebase.Iid;
@@ -64,7 +66,25 @@ namespace PushDemo.Droid
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+        protected override void OnStart()
+        {
+            base.OnStart();
 
+            Thread.Sleep(5000);
+            const int Requestpostnotificationid = 0;
+
+            string[] notiPermission =
+            {
+                Manifest.Permission.PostNotifications
+            };
+
+            if ((int)Build.VERSION.SdkInt < 33) return;
+
+            if (this.CheckSelfPermission(Manifest.Permission.PostNotifications) != Permission.Granted)
+            {
+                ActivityCompat.RequestPermissions(this, notiPermission, Requestpostnotificationid);
+            }
+        }
         public void OnSuccess(Java.Lang.Object result)
         {
             DeviceInstallationService.Token =
