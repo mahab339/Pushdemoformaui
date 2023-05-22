@@ -5,7 +5,7 @@ Export xamarin with hubs sample to maui (https://github.com/xamcat/mobcat-sample
 
 Main changes:
 
-* Use net 7 for nuget packages compatibility.
+* Use net 7 for nuget packages compatibility. This build works explicitly with net 7 and listed versions of (xamarin.googleplayservices) and (xamarin.firebase) packages.
 
 * For build action of google-servicesjson, install and import xamarin.googleplayservices.basement package to csproj file just before closing tag for project element. For example: 
 
@@ -17,5 +17,7 @@ Main changes:
 
 * Move service regesteration from bootstrap to app.xaml.cs constructor if possible.
 
-* After each build, an error about auto generated AndroidManifest.xml. In (obj\Debug\net7.0-android\AndroidManifest.xml), add attribut (android:exported="true") to element service with (android:name) attribute value ending with PushNotificationFirebaseMessagingService and rebuild.
+* After each build, an error about auto generated AndroidManifest.xml. In (obj\Debug\net7.0-android\AndroidManifest.xml), add attribut (android:exported="true") to element service with (android:name) attribute value ending with PushNotificationFirebaseMessagingService and rebuild. Sometimes, after adding new xaml pages, problem persists, even after rebuild. Reason is old built assets are there, VS clean also does not solve it. Solutions is to redownload code from remote and build on clean state.
+
+
 
