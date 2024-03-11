@@ -9,6 +9,7 @@ using AndroidX.Core.App;
 using AndroidX.Startup;
 using Firebase;
 using Firebase.Iid;
+using Firebase.Messaging;
 using PushDemo.Droid.Services;
 using PushDemo.Services;
 
@@ -41,9 +42,9 @@ namespace PushDemo.Droid
             if (DeviceInstallationService.NotificationsSupported)
             {
 
-                FirebaseInstanceId.GetInstance(Firebase.FirebaseApp.Instance)
-                    .GetInstanceId()
-                    .AddOnSuccessListener(this);
+                FirebaseMessaging.Instance
+                .GetToken()
+                .AddOnSuccessListener(this);
             }
 
             //Xamarin.Essentials.Platform.Init(this, savedInstanceState);
@@ -87,9 +88,8 @@ namespace PushDemo.Droid
         }
         public void OnSuccess(Java.Lang.Object result)
         {
-            DeviceInstallationService.Token =
-                result.Class.GetMethod("getToken").Invoke(result).ToString();
-            App.Hubsdroidtoken = result.Class.GetMethod("getToken").Invoke(result).ToString();
+            DeviceInstallationService.Token = result.ToString();
+            App.Hubsdroidtoken = result.ToString();
         }
         void ProcessNotificationActions(Intent intent)
         {
